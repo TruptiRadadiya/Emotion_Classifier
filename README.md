@@ -1,6 +1,6 @@
 # Emotion Classifier: Sad and Happy Face Detection
 ## Overview of the Analysis
-The goal of this project is to develop a machine learning model capable of automatically detecting and classifying facial expressions as either "happy" or "sad" from a dataset containing over 2000 images. This project is particularly relevant in fields such as psychology, social sciences, and human-computer interaction, where understanding and interpreting human emotions through facial expressions is crucial.
+The goal of this project is to develop a machine learning model capable of automatically detecting and classifying facial expressions as either "happy" or "sad" from a dataset containing over 200 images. This project is particularly relevant in fields such as psychology, social sciences, and human-computer interaction, where understanding and interpreting human emotions through facial expressions is crucial.
 
 ## Research Questions
 1. Classification Accuracy: Can we build a model to accurately classify facial expressions as happy or sad?
@@ -8,32 +8,11 @@ The goal of this project is to develop a machine learning model capable of autom
 3. Detection of Mixed Emotions: Can the model detect mixed emotions (e.g., slightly happy, neutral, slightly sad)?
    
 ## Data Source
-The data is sourced from publicly available datasets, specifically the "Sad and Happy Face Detection" dataset available on Kaggle. 
-Through link: https://www.kaggle.com/datasets/alirezaatashnejad/sad-and-happy-face-detection/data
+Initially, we obtained images datasets from websites such as Kaggle. However, the quality of the data contains lots of inaccuracies such as sad images in Happy folder, vice versa. We decided the best course of action in order to ensure data quality and integrity is to collate our own data by sourcing from publicly available images, specifically:
+* [iStock](https://www.istockphoto.com)
+* [Getty Images](https://www.gettyimages.com.au)
 
 This dataset provides a diverse collection of images labeled with sad and happy expressions, suitable for training models to detect and classify emotions based on facial features. The images vary in terms of lighting, angle, and demographic characteristics, ensuring the model's robustness and generalizability.
-
-## Kaggle API Setup
-To use the dataset directly in a Google Colab notebook, you can use Kaggle’s API to download the dataset directly to your Colab environment. Here’s how you can set it up:
-
-**1. Set Up Kaggle API Key**
-- Access your Kaggle account settings by clicking on your profile picture in the top right corner, then selecting “Account.”
-- Scroll down to the API section and click “Create New API Token.” This will download a kaggle.json file containing your API credentials.
-  
-**2. Upload the Kaggle API Key to Colab**
-In your Google Colab notebook, run the following code to upload your kaggle.json file.
-
-**3. Set Up Kaggle API in Colab**
-After uploading the kaggle.json file, move it to the correct directory and set the necessary permissions.
-
-**4. Download the Dataset Using Kaggle API**
-Download the dataset directly into your Colab environment using the Kaggle API.
-
-**5. Unzip the Dataset**
-Unzip the downloaded dataset.
-
-**6. Load the Dataset**
-After unzipping, load the dataset into your notebook using the appropriate libraries.
 
 ## Data Preprocessing
 - Target Variable: The target variable for the model is the emotional state, either sad or happy, detected from facial images.
