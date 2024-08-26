@@ -5,7 +5,7 @@ import tensorflow as tf
 import numpy as np
 
 # Load trained model
-model = tf.keras.models.load_model('Models/EmotionClassifier.h5')
+model = tf.keras.models.load_model('Models/EmotionClassifierOptimize3.h5')
 
 # Define a function to predict the class
 def predict_class(image):
