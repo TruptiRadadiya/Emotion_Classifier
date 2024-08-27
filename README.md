@@ -169,6 +169,39 @@ best_model = tuner.get_best_models()[0]
 - Best Accuracy: 0.7612
 - Loss: 0.5453
 
+**Description:**
+This attempt focused on finding the optimal combination of layers, neurons, and learning rates by using a systematic search approach with Keras Tuner. The model achieved the same accuracy as the third attempt but with a significantly lower loss. This reduction in loss indicates better generalization and suggests that the model is more robust in making predictions on unseen data.
+
+### Attempt 5:
+
+In the fifth attempt, the hyperparameters identified in Attempt 4 were used, but batch normalization layers were added to the model to improve training stability and potentially increase accuracy:
+
+```
+model.add(tf.keras.layers.Conv2D(64, (3,3), 1, activation='relu', input_shape=(150,150,3)))
+model.add(tf.keras.layers.MaxPooling2D((2, 2), padding = 'same'))
+tf.keras.layers.BatchNormalization()
+
+model.add(tf.keras.layers.Conv2D(48, (3, 3), activation='relu', padding="same"))
+model.add(tf.keras.layers.MaxPooling2D((2, 2), padding = 'same'))
+tf.keras.layers.BatchNormalization()
+
+model.add(tf.keras.layers.Flatten())
+model.add(tf.keras.layers.Dense(256, activation='relu'))
+
+model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
+```
+
+- .h5 file for this model is 192.90 MB which exceeds Git hub limit of 100 MB.
+- Please find it hear - `https://drive.google.com/file/d/17id3sxNQJVtLt7OKcPuzT00eW4HXR0R9/view?usp=drive_link`
+
+**Performance:**
+
+- Accuracy: 0.7761
+- Loss: 0.6248
+
+**Description:**
+The introduction of batch normalization in Attempt 5 led to a further improvement in accuracy while maintaining a low loss. Batch normalization helps by normalizing the inputs to each layer, which can speed up training and lead to better generalization. This resulted in the best performance observed across all attempts, with the highest accuracy and a competitive loss.
+
 ## Deployment
 
 The model is deployed using Gradio where users can upload photos, and the model classifies them into happy or sad categories.
