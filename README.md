@@ -204,7 +204,9 @@ The introduction of batch normalization in Attempt 5 led to a further improvemen
 
 ## Deployment
 
-The model is deployed using Gradio where users can upload photos, and the model classifies them into happy or sad categories.
+The model is deployed using Gradio where users can upload photos, and the model classifies them into happy or sad categories. The easiet way to do this is to git clone the repository into local drive. Ensure all relevant libraries are installed then activate the specific conda. Navigate to the appropriate directory that contains `app.py`. Execute it by entering `python app.py`. Click on either the specific local or global link that is displayed.
+
+[gradio GUI](https://github.com/TruptiRadadiya/Emotion_Classifier/blob/5e0e317f23bdbc9f531c927acc253d3683992625/Emotion_Classifier/Resources/Emotion%20Classifier.png)
 
 ## Summary
 
